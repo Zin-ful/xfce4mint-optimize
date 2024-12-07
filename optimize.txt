@@ -60,7 +60,7 @@ sudo nano /etc/default/grub
 
 GRUB_DEFAULT="liquorix entry number here"
 
-IF NOT INSTALLING NEW KERNEL
+###IF NOT INSTALLING NEW KERNEL###
 
 sudo nano /etc/modprobe.d/blacklist.conf
 
