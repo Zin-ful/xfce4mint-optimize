@@ -18,6 +18,7 @@ for slow boot systems
 sudo nano /etc/default/grub
 GRUB_TIMEOUT = 15
 sudo update grub
+
 install from snap:
 sudo snap install discord #reccomended
 sudo snap install spotify #reccomended
@@ -25,6 +26,7 @@ sudo snap install steam ###not reccomended###
 sudo snap install librewolf #reccomended
 sudo snap install minecraft ###not reccomended###
 sudo snap install kdenlive #reccomended
+
 install non-apt or non-snap packages OR if a package isnt recommended to be installed over snap
 https://librewolf.net/
 https://www.spotify.com/
@@ -35,3 +37,15 @@ https://store.steampowered.com/
 https://discord.com/
 https://kdenlive.org/en/download/
 
+Part Three:
+for amd systems
+
+sudo apt install mesa-utils libgl1-mesa-dri libgl1-mesa-glx -y
+
+sudo apt install vulkan-tools vulkan-validation-layers
+
+apt purge nvidia* nouveau*
+
+update-initramfs -u
+
+apt install amd64-microcode
