@@ -1,0 +1,37 @@
+all of this will need to be done manually, but this will shortcut the process
+prepackaged the part 1 to install on hardware. built for nvidia by default but
+part 3 takes care if that. also turn wrap on.
+
+Part One:
+sudo apt update && sudo apt upgrade && sudo apt install geany pcmanfm && sudo swapoff -a && sudo systemctl disable cups && sudo systemctl disable avahi-daemon && sudo systemctl disable mintupdate && sudo systemctl disable bluetooth && sudo systemctl disable ModemManager && sudo apt autoremove --purge mintchat celluloid hypnotix transmission-gtk ristretto parole xfburn orage hexchat xfce4-notifyd firefox warpinator thunar mousepad compizconfig-settings-manager doc-base language-pack-* language-selector-* rhythmbox simple-scan cheese orca xbrlapi mintwelcome -y && sudo apt autoclean && sudo apt install sxiv vlc-player jackd2 pulseaudio-module-jack qjackctl linux-tools-common linux-tools-generic cpupower systemback deborphan virtualbox -y && sudo cpupower frequency-set performance -g && xdg-mime default pcmanfm.desktop inode/directory && xdg-mime default geany.desktop text/plain && echo "load-module module-jack-sink" | sudo tee -a /etc/pulse/default.pa && echo "load-module module-jack-source" | sudo tee -a /etc/pulse/default.pa && pulseaudio -k && pulseaudio --start && pkill Thunar && deborphan && sudo apt purge $(deborphan) -y
+
+disables unused system processes, removes heavy packages (other than libreoffice)
+and installs needed packages. also edits some configs automatically 
+command may fail if packages do not exist, if so, edit the package out of the command
+
+Part Two:
+Disable start up apps like the printing service and bluetooth
+Open jack, set audio interface in 'setup' and set the first option to 48000, leave the other two options default 
+
+for slow boot systems 
+
+sudo nano /etc/default/grub
+GRUB_TIMEOUT = 15
+sudo update grub
+install from snap:
+sudo snap install discord #reccomended
+sudo snap install spotify #reccomended
+sudo snap install steam ###not reccomended###
+sudo snap install librewolf #reccomended
+sudo snap install minecraft ###not reccomended###
+sudo snap install kdenlive #reccomended
+install non-apt or non-snap packages OR if a package isnt recommended to be installed over snap
+https://librewolf.net/
+https://www.spotify.com/
+https://winebottles.org/
+https://www.minecraft.net/
+https://download.curseforge.com/
+https://store.steampowered.com/
+https://discord.com/
+https://kdenlive.org/en/download/
+
